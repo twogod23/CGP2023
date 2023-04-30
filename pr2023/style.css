@@ -1,0 +1,42 @@
+.title{
+    font-family: "fot-tsukuaoldmin-pr6n", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+.main{
+    font-family: "uddigikyokasho-pro", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 2%;
+}
+p{
+    margin: 1em;
+}
+div{
+    margin: 3em;
+}
+img{
+    width: 100%;
+    height: auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+#link{
+    font-size: 1.3em;
+}
+h3{
+    font-size: 1.7em;
+}
+h4{
+    font-size: 1.5em;
+}
+
+@media screen and (max-width:500px){
+    .main{
+        margin-left: 0%;
+        margin-right: 0%;
+    }
+    
+}
