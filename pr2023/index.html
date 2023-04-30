@@ -13,12 +13,174 @@
     </div>
 
     <div class="main">
-        <div class="st1">
+        <div class="st0">
             <h3>0. 準備するもの</h3>
             <ul>
                 <li>パソコン</li>
                 <li>Googleアカウント</li>
+                <a> （普段使用しているもので構いません）</a>
             </ul>
+        </div>
+
+        <div class="st1">
+            <h3>1. プログラムが使えるように使用</h3>
+            <ul>
+                <p class="text">
+                    最初に、プログラムを書くための環境を整えます。<br>
+                </p>
+                <p class="text">
+                    まず、下の「ファイルをダウンロード」から、今回使用するファイルをダウンロードしてください。<br>
+                    <a href="./files/StableDiffusion20230502.ipynb" id="link">ファイルをダウンロード</a><br>
+                </p>
+                <p class="text">
+                    次に、下の「Googleドライブにアクセス」から、お手持ちのGoogleでログインして、Googleドライブのサイトを表示させます。<br>
+                    <a href="https://drive.google.com/drive/my-drive" id="link">Googleドライブにアクセス</a><br>
+                </p>
+                <p class="text">
+                    その後、Googleドライブ内に、先ほどダウンロードしたファイルをアップロードします。<br>
+                    最後に、アップロードしたファイルをクリックして開きます。<br>
+                </p>
+                <p class="text">
+                    これで、プログラムを書くための環境が整いました!<br>
+                </p>
+            </ul>
+        </div>
+
+        <div class="st2">
+            <h3>2. 必要な情報の読み込み</h3>
+            <ul>
+                <p class="text">
+                    ここからは、実際にプログラムを動かしていきます。<br>
+                </p>
+                <p class="text">
+                    まず、問題なくプログラムを動かすために、少し設定を変更します。<br>
+                    画面上部左上の「編集」をクリックし、「ノートブックの設定」をクリックします。<br>
+                    「ハードウェア アクセラレータ」の項目を「GPU」に変更し、「保存」をクリックします。<br>
+                    <img src="./files/settingNB.png" alt="How to setting notebook.">
+                </p>
+                <p class="text">
+                    次に、ライブラリのインストールの項目で、再生ボタンをクリックします。<br>
+                    <img src="./files/installLibrary.png" alt="How to install libraries.">
+                    プログラムの実行が完了したら、次のステップに進みましょう。<br>
+                </p>
+            </ul>
+        </div>
+
+        <div class="st3">
+            <h3>3. 作りたい画像の雰囲気を決めよう</h3>
+            <ul>
+                <p class="text">
+                    作りたい画像の雰囲気を決めましょう。<br>
+                    画像の雰囲気は、AIが事前に学習したデータである、モデルを選択することで決めることができます。<br>
+                </p>
+                <p class="text">
+                    「model_id」の項目から、作りたい画像の雰囲気を選びます。<br>
+                    <img src="./files/selectimage.png" alt="How to select features">
+                    項目の詳細は、以下の通りです。<br>
+                    <ul>
+                        <p>
+                            <h4>stabilityai/stable-diffusion-2</h4>
+                            <p>
+                                実写のような画像を生成することができるモデルです。<br>
+                                公式では、以下のような画像が生成されることが紹介されています。<br>
+                                <img src="https://github.com/Stability-AI/stablediffusion/blob/main/assets/stable-samples/txt2img/768/merged-0005.png?raw=true" alt="merged-0005.png (1536×768) https://raw.githubusercontent.com/Stability-AI/stablediffusion/main/assets/stable-samples/txt2img/768/merged-0005.png" class="eximg"><br>
+                            </p>
+                            <a href="https://huggingface.co/stabilityai/stable-diffusion-2">詳細はこちらから</a>
+                        </p>
+                        <p>
+                            <h4>CompVis/stable-diffusion-v1-4</h4>
+                            <p>
+                                こちらも、実写に近い画像を生成することができるモデルです。<br>
+                                公式では、以下のような画像が生成されることが紹介されています。<br>
+                                <img src="https://raw.githubusercontent.com/CompVis/stable-diffusion/main/assets/stable-samples/txt2img/merged-0005.png" alt="https://github.com/CompVis/stable-diffusion" class="eximg"><br>
+                                <a href="https://huggingface.co/CompVis/stable-diffusion-v1-4">詳細はこちらから</a>
+                            </p>
+                        </p>
+                        <p>
+                            <h4>hakurei/waifu-diffusion</h4>
+                            <p>
+                                アニメのような画像を生成することができるモデルです。<br>
+                                公式では、以下のような画像が生成されることが紹介されています。<br>
+                                <img src="https://user-images.githubusercontent.com/26317155/210155933-db3a5f1a-1ec3-4777-915c-6deff2841ce9.png" alt="https://user-images.githubusercontent.com/26317155/210155933-db3a5f1a-1ec3-4777-915c-6deff2841ce9.png" class="eximg"><br>
+                                <a href="https://huggingface.co/hakurei/waifu-diffusion">詳細はこちらから</a>
+                            </p>
+                        </p>
+                        <p>
+                            <h4>prompthero/openjourney</h4>
+                            <p>
+                                アニメのような画像を生成することができるモデルです。<br>
+                                公式では、以下の右側ような画像が生成されることが紹介されています。<br>
+                                <img src="https://s3.amazonaws.com/moonup/production/uploads/1667904587646-63265d019f9d19bfd4f45031.png" alt="https://s3.amazonaws.com/moonup/production/uploads/1667904587646-63265d019f9d19bfd4f45031.png" class="eximg"><br>
+                                <a href="https://huggingface.co/prompthero/openjourney">詳細はこちらから</a>
+                            </p>
+                        </p>
+                    </ul>
+                </p>
+                <p class="text">
+                    モデルを選択したら、再生ボタンをクリックして実行しましょう。<br>
+                </p>
+            </ul>
+        </div>
+
+        <div class="st4">
+            <h3>4. AIに作らせたい画像を指示しよう</h3>
+            <ul>
+                <p class="text">
+                    ここでは、AIに作らせたい画像をテキストで指示します。<br>
+                </p>
+                <p class="text">
+                    まず、「textja」の項目に、作りたい画像を日本語で入力します。<br>
+                    <img src="./files/prompt.png" alt="How to write prompt.">
+                    または、「texten」の項目に、作りたい画像を英語で入力しても構いません。<br>
+                </p>
+                 <p class="text">
+                    入力し終わったら、再生ボタンをクリックして実行しましょう。<br>
+                 </p>
+            </ul>
+        </div>
+
+        <div class="st5">
+            <h3>5. 画像を出力しよう</h3>
+            <ul>
+                <p class="text">
+                    ここでは、各パラメーターを調整して、AIに作らせたい画像を出力します。<br>
+                </p>
+                <p class="text">
+                    まずは、「seed」と「guidance_scale」の項目を設定しましょう。<br>
+                    <img src="./files/param.png" alt="How to set parameter.">
+                    設定内容は、以下の通りです。<br>
+                    <ul>
+                        <p>
+                            <h4>seed</h4>
+                            <p>
+                                乱数のシード値を設定します。<br>
+                                この値を変更すると、生成される画像が変わります。<br>
+                                また、この値を変更すると、同じテキストを入力しても、生成される画像が変わります。<br>
+                            </p>
+                        </p>
+                        <p>
+                            <h4>guidance_scale</h4>
+                            <p>
+                                画像の雰囲気を調整することができます。<br>
+                                この値は、指示したテキストの厳密さを調整することができます。<br>
+                                この値を変更すると、生成される画像が変わります。<br>
+                            </p>
+                        </p>
+                </p>
+                <p class="text">
+                    最後に、設定し終わったら、再生ボタンをクリックして実行しましょう。<br>
+                </p>
+            </ul>
+        </div>
+
+        <div class="st6">
+            <h3>6. 完成</h3>
+            <ul>
+                <p class="text">
+                    <img src="./OutputImge.png" alt="Output image"><br>
+                    これで、AIに作らせたい画像を出力することができました。<br>
+                    生成した画像は、左端の「ファイル」の項目に保存されています。<br>
+                </p>
         </div>
     </div>
 </body>
