@@ -65,6 +65,11 @@ h4{
 .capc{
     margin: 0;
 }
+#last{
+    font-size: 0.5em;
+    color: #aaaaaa;
+    font-style: italic;
+}
 
 @media screen and (max-width:640px) {
     .main{
