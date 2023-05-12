@@ -9,33 +9,26 @@
 <body>
     <li><a href="./games/index.html">制作したゲーム</a></li>
     <li><a href="./pr2023/index.html">Pr部門2023年度5月オンライン新歓イベント</a></li>
-</body>
-<script>
-    //ランダムでリンクを設定
-    var links = [
-        "https://twitter.com/tokoik/status/1574440156215808000",
-        "https://twitter.com/tokoik/status/1574440156215808000",
-        "https://twitter.com/tokoik/status/1574440156215808000",
-        "https://twitter.com/tokoik/status/1574440156215808000",
-        "https://twitter.com/tokoik/status/1574440156215808000",
-        "https://twitter.com/tokoik/status/1574440156215808000",
-        "https://www.instagram.com/twogod23/",
-        "https://www.instagram.com/wakayama_cgp/",
-        "https://twitter.com/CGP_wakayama",
-        "https://twitter.com/tokoik/status/1574440156215808000"
-    ];
-    var link = links[Math.floor(Math.random() * links.length)];
-    //10秒後に別のページに遷移
-    setTimeout(function(){
-        //効果音を鳴らす
-        var audio = new Audio();
-        audio.src = "./bomb.mp3";
-        audio.play();
-        //3秒待つ
+    <script>
+        //ランダムでリンクを設定
+        var links = [
+            "https://www.instagram.com/twogod23/",
+            "https://www.instagram.com/wakayama_cgp/",
+            "https://twitter.com/CGP_wakayama",
+            "https://twitter.com/tokoik/status/1574440156215808000"
+        ];
+        var link = links[Math.floor(Math.random() * links.length)];
+        //10秒後に別のページに遷移
         setTimeout(function(){
-            //リンク先に遷移
-            location.href = link;
-        }, 3000);
-    }, 10000);
-</script>
+            //効果音を鳴らす
+            var audio = new Audio("./materials/bomb.mp3");
+            audio.play();
+            //3秒待つ
+            setTimeout(function(){
+                //リンク先に遷移
+                location.href = link;
+            }, 3000);
+        }, 10000);
+    </script>
+</body>
 </html>
